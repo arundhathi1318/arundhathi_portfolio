@@ -38,19 +38,19 @@ const Contact = () => {
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@portfolio.dev',
+      value: 'arundhathijampala@gmail.com',
       href: 'mailto:hello@portfolio.dev'
     },
     {
       icon: Phone,
       label: 'Phone',
-      value: '+1 (555) 123-4567',
+      value: '+91 6301653860',
       href: 'tel:+15551234567'
     },
     {
       icon: MapPin,
       label: 'Location',
-      value: 'San Francisco, CA',
+      value: 'Hyderabad, Telangana',
       href: '#'
     }
   ];
@@ -59,19 +59,14 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      href: 'https://github.com',
+      href: 'https://github.com/arundhathi1318',
       color: 'hover:text-gray-900 dark:hover:text-gray-100'
     },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      href: 'https://twitter.com',
-      color: 'hover:text-blue-500'
-    },
+    
     {
       icon: User,
       label: 'LinkedIn',
-      href: 'https://linkedin.com',
+      href: 'https://www.linkedin.com/in/nagaarundhathi',
       color: 'hover:text-blue-600'
     }
   ];
