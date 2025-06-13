@@ -24,9 +24,11 @@ const Navigation = ({ activeSection, onSectionChange }: NavigationProps) => {
     { id: 'home', label: 'Home', icon: Home },
     { id: 'about', label: 'About', icon: User },
     { id: 'projects', label: 'Projects', icon: Briefcase },
+    
     { id: 'achievements', label: 'Achievements', icon: Award },
     { id: 'resume', label: 'Resume', icon: FileText },
     { id: 'contact', label: 'Contact', icon: Contact },
+    
   ];
 
   return (

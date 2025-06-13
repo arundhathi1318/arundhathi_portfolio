@@ -27,7 +27,6 @@ const About = () => {
             </p>
             
             <p className="text-lg leading-relaxed">
-              I’ve participated in programs like PwC Launchpad and ranked in the top 1% in the Amazon ML Challenge 2024. 
               I enjoy applying my skills to real-world problems—whether it's through intelligent web systems, predictive ML models, or meaningful collaborations.
             </p>
 

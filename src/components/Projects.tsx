@@ -8,10 +8,10 @@ const Projects = () => {
       description:
         'A real-time gaming trend analysis tool that tracks Twitch streaming patterns, game popularity, and viewer behavior using Twitch API and data visualizations.',
       image:
-        'https://images.unsplash.com/photo-1598550460188-c89f4e9a7c6e?w=800&h=600&fit=crop',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSUaIx60H_cSq_S_kwil0w-Y_6iswpnnqy0g&s',
       technologies: ['React', 'Node.js', 'Twitch API', 'Chart.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://lovable.dev/projects/b2f2ac87-f130-4175-b26c-fac342a1b1ad',
+      githubUrl: 'https://github.com/arundhathi1318/twitch-trend-beacon',
     },
     {
       id: 2,
@@ -21,8 +21,8 @@ const Projects = () => {
       image:
         'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800&h=600&fit=crop',
       technologies: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://github.com/arundhathi1318/Food-Management-System',
+      githubUrl: 'https://github.com/arundhathi1318/Food-Management-System',
     },
     {
       id: 3,
@@ -30,10 +30,10 @@ const Projects = () => {
       description:
         'A complete lead collection and automation system using React for the frontend, Flask for the backend API, and n8n workflows for triggering email notifications.',
       image:
-        'https://images.unsplash.com/photo-1573496782432-68b359cfd38b?w=800&h=600&fit=crop',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQuav4aT_MxK4cA1D28T-fZK1MS3rhccXsyiw&s',
       technologies: ['React', 'Flask', 'n8n', 'SMTP'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://lead-generation-system-seven.vercel.app/',
+      githubUrl: 'https://github.com/arundhathi1318/Lead_Generation_System',
     },
     {
       id: 4,
@@ -41,10 +41,10 @@ const Projects = () => {
       description:
         'A responsive and dynamic perfume shop with authentication, modern UI, and mobile-first design. Features include login, product listing, and user-friendly checkout.',
       image:
-        'https://images.unsplash.com/photo-1616627455424-e0a754f9e1f0?w=800&h=600&fit=crop',
+    'https://i0.wp.com/themes.svn.wordpress.org/the-perfume-shop/0.1.3/screenshot.png',
       technologies: ['React', 'Firebase Auth', 'Tailwind CSS', 'Node.js'],
-      liveUrl: '#',
-      githubUrl: '#',
+      liveUrl: 'https://theperfumecompany.vercel.app/',
+      githubUrl: 'https://github.com/arundhathi1318/The-Perfume-Project',
     },
   ];
 
