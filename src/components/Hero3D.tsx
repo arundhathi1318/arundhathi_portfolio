@@ -1,4 +1,3 @@
-
 import { useEffect, useRef } from 'react';
 
 const Hero3D = () => {
@@ -12,10 +11,10 @@ const Hero3D = () => {
       const rect = container.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width;
       const y = (e.clientY - rect.top) / rect.height;
-      
+
       const rotateX = (y - 0.5) * 10;
       const rotateY = (x - 0.5) * 10;
-      
+
       const elements = container.querySelectorAll('.hero-3d-element');
       elements.forEach((el, index) => {
         const element = el as HTMLElement;
@@ -40,7 +39,7 @@ const Hero3D = () => {
     >
       {/* Background gradient mesh */}
       <div className="absolute inset-0 gradient-mesh opacity-10"></div>
-      
+
       {/* Floating particles */}
       <div className="absolute inset-0">
         {[...Array(20)].map((_, i) => (
@@ -60,15 +59,17 @@ const Hero3D = () => {
       {/* Main content */}
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <div className="hero-3d-element mb-8">
-          <h1 className="text-6xl md:text-8xl font-bold text-gradient mb-6 animate-fade-in">
-            Creative
-            <span className="block">Developer</span>
+          <h1 className="text-5xl md:text-7xl font-bold text-gradient mb-4 animate-fade-in">
+            Naga Arundhathi Jampala
+            <span className="block text-3xl md:text-4xl font-medium text-muted-foreground mt-2">
+              Full Stack Developer | AI Builder | DevOps Learner
+            </span>
           </h1>
         </div>
-        
+
         <div className="hero-3d-element mb-8" style={{ animationDelay: '0.2s' }}>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in">
-            Crafting digital experiences with modern technologies and creative vision
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 animate-fade-in">
+            Turning ideas into intelligent, scalable, and aesthetic tech solutions — from web to AI to infrastructure.
           </p>
         </div>
 
@@ -77,7 +78,7 @@ const Hero3D = () => {
             className="px-8 py-4 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-all duration-200 card-hover transform hover:scale-105"
             data-cursor-hover
           >
-            Explore My Work
+            View My Portfolio
           </button>
         </div>
       </div>

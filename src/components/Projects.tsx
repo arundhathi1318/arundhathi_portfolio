@@ -1,35 +1,51 @@
-
 import { ExternalLink, Github } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with modern UI/UX, payment integration, and admin dashboard.',
-      image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop',
-      technologies: ['React', 'Node.js', 'PostgreSQL', 'Stripe'],
+      title: 'Twitch Gaming Trend Monitor',
+      description:
+        'A real-time gaming trend analysis tool that tracks Twitch streaming patterns, game popularity, and viewer behavior using Twitch API and data visualizations.',
+      image:
+        'https://images.unsplash.com/photo-1598550460188-c89f4e9a7c6e?w=800&h=600&fit=crop',
+      technologies: ['React', 'Node.js', 'Twitch API', 'Chart.js'],
       liveUrl: '#',
-      githubUrl: '#'
+      githubUrl: '#',
     },
     {
       id: 2,
-      title: 'AI Dashboard',
-      description: 'Machine learning dashboard with real-time data visualization and predictive analytics.',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
-      technologies: ['Python', 'TensorFlow', 'React', 'D3.js'],
+      title: '🍽️ Food Wastage Management System',
+      description:
+        'A responsive web platform that connects restaurants with surplus food to NGOs and consumers. Users can reserve/order discounted meals in real-time, promoting sustainability.',
+      image:
+        'https://images.unsplash.com/photo-1506368249639-73a05d6f6488?w=800&h=600&fit=crop',
+      technologies: ['HTML', 'CSS', 'JavaScript', 'MongoDB', 'Node.js'],
       liveUrl: '#',
-      githubUrl: '#'
+      githubUrl: '#',
     },
     {
       id: 3,
-      title: 'Mobile Banking App',
-      description: 'Secure mobile banking application with biometric authentication and transaction tracking.',
-      image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=600&fit=crop',
-      technologies: ['React Native', 'Firebase', 'Redux', 'Plaid API'],
+      title: 'Lead Generation System',
+      description:
+        'A complete lead collection and automation system using React for the frontend, Flask for the backend API, and n8n workflows for triggering email notifications.',
+      image:
+        'https://images.unsplash.com/photo-1573496782432-68b359cfd38b?w=800&h=600&fit=crop',
+      technologies: ['React', 'Flask', 'n8n', 'SMTP'],
       liveUrl: '#',
-      githubUrl: '#'
-    }
+      githubUrl: '#',
+    },
+    {
+      id: 4,
+      title: 'Perfume E-Commerce Website',
+      description:
+        'A responsive and dynamic perfume shop with authentication, modern UI, and mobile-first design. Features include login, product listing, and user-friendly checkout.',
+      image:
+        'https://images.unsplash.com/photo-1616627455424-e0a754f9e1f0?w=800&h=600&fit=crop',
+      technologies: ['React', 'Firebase Auth', 'Tailwind CSS', 'Node.js'],
+      liveUrl: '#',
+      githubUrl: '#',
+    },
   ];
 
   return (
@@ -38,54 +54,57 @@ const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Featured Projects</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for development.
+            Explore a selection of impactful web and AI-based projects that reflect my skills in
+            full-stack development, automation, and innovation.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => (
-            <div 
+            <div
               key={project.id}
               className="group bg-card border border-border rounded-xl overflow-hidden card-hover"
               data-cursor-hover
             >
               <div className="relative overflow-hidden">
-                <img 
+                <img
                   src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex gap-2">
-                    <button 
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors"
-                      data-cursor-hover
                     >
                       <ExternalLink className="w-4 h-4" />
                       Live Demo
-                    </button>
-                    <button 
+                    </a>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="flex items-center gap-2 px-3 py-2 bg-white/20 backdrop-blur-sm rounded-lg text-white hover:bg-white/30 transition-colors"
-                      data-cursor-hover
                     >
                       <Github className="w-4 h-4" />
                       Code
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
-              
+
               <div className="p-6">
                 <h3 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
                   {project.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 line-clamp-3">
-                  {project.description}
-                </p>
-                
+                <p className="text-muted-foreground mb-4 line-clamp-3">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <span 
+                    <span
                       key={tech}
                       className="px-2 py-1 bg-accent text-accent-foreground rounded text-xs font-medium"
                     >

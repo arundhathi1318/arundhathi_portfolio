@@ -1,12 +1,11 @@
-
-import { Code, Palette, Rocket, Users } from 'lucide-react';
+import { Brain, Code, Server, Users } from 'lucide-react';
 
 const About = () => {
   const skills = [
-    { name: 'Frontend Development', level: 95, icon: Code },
-    { name: 'UI/UX Design', level: 88, icon: Palette },
-    { name: 'Project Management', level: 92, icon: Rocket },
-    { name: 'Team Leadership', level: 85, icon: Users },
+    { name: 'Full-Stack Development', level: 90, icon: Code },
+    { name: 'AI/ML & Deep Learning', level: 85, icon: Brain },
+    { name: 'Backend/API Design', level: 88, icon: Server },
+    { name: 'Team Collaboration', level: 87, icon: Users },
   ];
 
   return (
@@ -15,27 +14,31 @@ const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">About Me</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            I'm a passionate developer who loves creating beautiful, functional, and user-centered digital experiences.
+            A self-driven Computer Science student passionate about building impactful tech products, blending creativity with deep technical skills.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
-              With over 5 years of experience in web development, I specialize in creating modern, 
-              responsive applications using cutting-edge technologies. My journey started with a 
-              curiosity for how things work and evolved into a passion for building digital solutions 
-              that make a difference.
+              I'm Arundhathi, currently in my pre-final year at VNR Vignana Jyothi Institute of Engineering and Technology. 
+              As a full-stack developer with a strong foundation in core CS subjects and real-world project experience, I thrive in fast-paced, hands-on environments.
+              My journey has included internships, research, and leading cross-functional teams to build scalable applications.
             </p>
             
             <p className="text-lg leading-relaxed">
-              I believe in the power of clean code, intuitive design, and collaborative teamwork. 
-              When I'm not coding, you can find me exploring new technologies, contributing to 
-              open-source projects, or sharing knowledge with the developer community.
+              I’ve participated in programs like PwC Launchpad and ranked in the top 1% in the Amazon ML Challenge 2024. 
+              I enjoy applying my skills to real-world problems—whether it's through intelligent web systems, predictive ML models, or meaningful collaborations.
             </p>
 
             <div className="flex flex-wrap gap-3 mt-8">
-              {['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker'].map((tech) => (
+              {[
+                'HTML', 'CSS', 'JavaScript', 'SQL', // basic
+                'React', 'Node.js', 'Express',       // frontend/backend
+                'MongoDB', 'PostgreSQL', 'FastAPI',  // databases & API
+                'Python', 'Java', 'TypeScript',      // languages
+                'Docker', 'Git', 'AWS'               // tools & devops
+              ].map((tech) => (
                 <span 
                   key={tech}
                   className="px-4 py-2 bg-card border border-border rounded-lg text-sm font-medium hover:bg-accent transition-colors card-hover"
