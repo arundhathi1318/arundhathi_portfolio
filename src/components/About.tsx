@@ -21,14 +21,12 @@ const About = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
             <p className="text-lg leading-relaxed">
-              I'm Arundhathi, currently in my pre-final year at VNR Vignana Jyothi Institute of Engineering and Technology. 
-              As a full-stack developer with a strong foundation in core CS subjects and real-world project experience, I thrive in fast-paced, hands-on environments.
-              My journey has included internships, research, and leading cross-functional teams to build scalable applications.
-            </p>
-            
-            <p className="text-lg leading-relaxed">
-              I enjoy applying my skills to real-world problems—whether it's through intelligent web systems, predictive ML models, or meaningful collaborations.
-            </p>
+  Hi, I'm Arundhathi — a pre-final year student at VNR Vignana Jyothi Institute of Engineering and Technology with a solid grasp of full-stack development and computer science fundamentals. I’ve picked up practical skills not just from textbooks, but from late-night debugging, real project deadlines, and figuring out why things break (often).
+</p>
+
+<p className="text-lg leading-relaxed">
+  I enjoy building things that work — whether it's a clean UI, a backend that doesn’t crash, or an ML model that actually predicts something useful. I'm always up for collaborative projects, especially the kind that mix tech with a little bit of chaos and creativity.
+</p>
 
             <div className="flex flex-wrap gap-3 mt-8">
               {[
