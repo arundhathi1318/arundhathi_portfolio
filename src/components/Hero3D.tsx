@@ -97,36 +97,31 @@ const Hero3D = () => {
         <div key={i} className="absolute w-2 h-2 bg-pink-300/20 rounded-full animate-float" style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 6}s`, animationDuration: `${6 + Math.random() * 4}s` }} />
       ))}
       
-      {/* --- UPDATED: This container now partitions the screen --- */}
-      <div className="absolute inset-0 flex items-center justify-between px-6 md:px-10 lg:px-24">
-        {/* Container for your image and text */}
-        <div className="flex items-center gap-x-10">
-          <div className="z-10 hidden lg:block"> {/* Hides image on smaller screens */}
-            <img
-              src="/6597434.jpg"
-              alt="Arundhathi Graphic"
-              className="w-[280px] rounded-xl shadow-xl animate-fade-in"
-            />
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <div className="hero-3d-element mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-[#FFD6C9] mb-4 animate-fade-in">
+              Naga Arundhathi Jampala
+              <span className="block text-3xl md:text-4xl font-medium text-gray-300 mt-2">
+                Full Stack Developer | AI Builder | DevOps Learner
+              </span>
+            </h1>
           </div>
-          <div className="relative z-10 text-center lg:text-left">
-            <div className="hero-3d-element mb-8">
-              <h1 className="text-5xl md:text-7xl font-bold text-[#FFD6C9] mb-4 animate-fade-in">
-                Naga Arundhathi Jampala
-                <span className="block text-3xl md:text-4xl font-medium text-gray-300 mt-2">
-                  Full Stack Developer | AI Builder | DevOps Learner
-                </span>
-              </h1>
-            </div>
-            <div className="hero-3d-element mb-8" style={{ animationDelay: '0.2s' }}>
-              <p className="text-lg md:text-xl text-gray-400 animate-fade-in">
-                Just a curious mind building things with code, chasing ideas, and occasionally debugging life.
-              </p>
-            </div>
+          <div className="hero-3d-element mb-8" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg md:text-xl text-gray-400 animate-fade-in">
+              Just a curious mind building things with code, chasing ideas, and occasionally debugging life.
+            </p>
           </div>
         </div>
-        
-        {/* --- NEW: Invisible placeholder to reserve space for the chatbot --- */}
-        <div className="w-80 flex-shrink-0 hidden md:block" />
+      </div>
+      
+      {/* --- UPDATED: Image is now hidden on mobile to prevent overlap --- */}
+      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-10 hidden md:block">
+        <img
+          src="/6597434.jpg"
+          alt="Arundhathi Graphic"
+          className="w-[160px] lg:w-[280px] rounded-xl shadow-xl animate-fade-in"
+        />
       </div>
 
       <div className="absolute top-1/4 left-1/4 w-32 h-32 hero-3d-element opacity-10 blur-sm">
@@ -136,8 +131,8 @@ const Hero3D = () => {
         <div className="w-full h-full bg-gradient-to-br from-[#FFD6C9] to-[#FFAC70] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
-      {/* The fixed chatbot will now fit perfectly into the space created by the placeholder */}
-      <div className="fixed top-1/2 right-6 md:right-10 lg:right-24 transform -translate-y-1/2 z-50">
+      {/* --- UPDATED: Chatbot is now at the bottom on mobile, and middle-right on desktop --- */}
+      <div className="fixed bottom-6 right-6 z-50 md:top-1/2 md:right-10 lg:right-24 md:transform md:-translate-y-1/2">
         <div className="w-80 h-[28rem] bg-black/30 backdrop-blur-lg rounded-xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
           <div className="flex-shrink-0 p-3 bg-black/20 text-center text-white font-medium">Know me</div>
           <div ref={chatContainerRef} className="flex-1 p-4 space-y-4 overflow-y-auto">
