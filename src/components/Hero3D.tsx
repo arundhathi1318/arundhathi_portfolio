@@ -97,8 +97,11 @@ const Hero3D = () => {
         <div key={i} className="absolute w-2 h-2 bg-pink-300/20 rounded-full animate-float" style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 6}s`, animationDuration: `${6 + Math.random() * 4}s` }} />
       ))}
       
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      {/* --- UPDATED: Main layout container --- */}
+      <div className="absolute inset-0 flex flex-col md:flex-row items-center justify-center md:justify-between gap-y-10 p-6 sm:p-10 lg:p-24">
+        
+        {/* Left Side: Hero Text */}
+        <div className="relative z-10 text-center md:text-left">
           <div className="hero-3d-element mb-8">
             <h1 className="text-5xl md:text-7xl font-bold text-[#FFD6C9] mb-4 animate-fade-in">
               Naga Arundhathi Jampala
@@ -113,53 +116,46 @@ const Hero3D = () => {
             </p>
           </div>
         </div>
-      </div>
-      
-      {/* --- UPDATED: Image is now hidden on mobile to prevent overlap --- */}
-      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-10 hidden md:block">
-        <img
-          src="/6597434.jpg"
-          alt="Arundhathi Graphic"
-          className="w-[160px] lg:w-[280px] rounded-xl shadow-xl animate-fade-in"
-        />
+
+        {/* Right Side: Chatbot */}
+        <div className="relative z-50 flex-shrink-0">
+          <div className="w-80 h-[28rem] bg-black/30 backdrop-blur-lg rounded-xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
+            <div className="flex-shrink-0 p-3 bg-black/20 text-center text-white font-medium">Know me</div>
+            <div ref={chatContainerRef} className="flex-1 p-4 space-y-4 overflow-y-auto">
+              <div className="flex justify-start">
+                <p className="max-w-[80%] text-sm bg-gray-700 text-white p-3 rounded-lg rounded-bl-none">{initialMessage.text}</p>
+              </div>
+              {conversation.map((msg, index) => (
+                <div key={index} className={`flex ${msg.type === 'question' ? 'justify-end' : 'justify-start'}`}>
+                  <p className={`max-w-[80%] text-sm p-3 rounded-lg ${msg.type === 'question' ? 'bg-[#FFAC70] text-black rounded-br-none' : 'bg-gray-700 text-white rounded-bl-none'}`}>{msg.text}</p>
+                </div>
+              ))}
+              {isAnswering && (
+                <div className="flex justify-start">
+                  <div className="bg-gray-700 p-3 rounded-lg rounded-bl-none flex items-center space-x-1">
+                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
+                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
+                    <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></span>
+                  </div>
+                </div>
+              )}
+            </div>
+            <div className="p-4 border-t border-white/10">
+              <button onClick={handleRandomQuestionClick} className="w-full text-center text-sm text-black bg-gradient-to-r from-[#FFD6C9] to-[#FFAC70] hover:from-[#FFAC70] hover:to-[#FFD6C9] p-3 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled={isAnswering}>
+                Ask a Random Question
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
 
+      {/* Decorative floating shapes */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 hero-3d-element opacity-10 blur-sm">
         <div className="w-full h-full bg-gradient-to-br from-[#FFAC70] to-[#FFD6C9] rounded-3xl animate-float"></div>
       </div>
       <div className="absolute bottom-1/4 right-1/3 w-24 h-24 hero-3d-element opacity-20 blur-sm">
         <div className="w-full h-full bg-gradient-to-br from-[#FFD6C9] to-[#FFAC70] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-      </div>
-
-      {/* --- UPDATED: Chatbot is now at the bottom on mobile, and middle-right on desktop --- */}
-      <div className="fixed bottom-6 right-6 z-50 md:top-1/2 md:right-10 lg:right-24 md:transform md:-translate-y-1/2">
-        <div className="w-80 h-[28rem] bg-black/30 backdrop-blur-lg rounded-xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
-          <div className="flex-shrink-0 p-3 bg-black/20 text-center text-white font-medium">Know me</div>
-          <div ref={chatContainerRef} className="flex-1 p-4 space-y-4 overflow-y-auto">
-            <div className="flex justify-start">
-              <p className="max-w-[80%] text-sm bg-gray-700 text-white p-3 rounded-lg rounded-bl-none">{initialMessage.text}</p>
-            </div>
-            {conversation.map((msg, index) => (
-              <div key={index} className={`flex ${msg.type === 'question' ? 'justify-end' : 'justify-start'}`}>
-                <p className={`max-w-[80%] text-sm p-3 rounded-lg ${msg.type === 'question' ? 'bg-[#FFAC70] text-black rounded-br-none' : 'bg-gray-700 text-white rounded-bl-none'}`}>{msg.text}</p>
-              </div>
-            ))}
-            {isAnswering && (
-              <div className="flex justify-start">
-                <div className="bg-gray-700 p-3 rounded-lg rounded-bl-none flex items-center space-x-1">
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></span>
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></span>
-                  <span className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></span>
-                </div>
-              </div>
-            )}
-          </div>
-          <div className="p-4 border-t border-white/10">
-            <button onClick={handleRandomQuestionClick} className="w-full text-center text-sm text-black bg-gradient-to-r from-[#FFD6C9] to-[#FFAC70] hover:from-[#FFAC70] hover:to-[#FFD6C9] p-3 rounded-lg font-semibold transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled={isAnswering}>
-              Ask a Random Question
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );
