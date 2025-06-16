@@ -1,6 +1,4 @@
-
 import { useState, useEffect } from 'react';
-import CustomCursor from '../components/CustomCursor';
 import Navigation from '../components/Navigation';
 import Hero3D from '../components/Hero3D';
 import About from '../components/About';
@@ -8,6 +6,7 @@ import Projects from '../components/Projects';
 import Achievements from '../components/Achievements';
 import Resume from '../components/Resume';
 import Contact from '../components/Contact';
+import Experience from '@/components/Experience';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -22,7 +21,7 @@ const Index = () => {
         if (element) {
           const offsetTop = element.offsetTop;
           const height = element.offsetHeight;
-          
+
           if (scrollPosition >= offsetTop && scrollPosition < offsetTop + height) {
             setActiveSection(section);
           }
@@ -36,41 +35,52 @@ const Index = () => {
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
-    
+
     const element = document.getElementById(section);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
-        block: 'start'
+        block: 'start',
       });
     }
   };
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <CustomCursor />
+      {/* Removed <CustomCursor /> */}
       <Navigation activeSection={activeSection} onSectionChange={handleSectionChange} />
-      
+
       <main>
         <section id="home">
           <Hero3D />
         </section>
-        
+
         <About />
         <Projects />
+        <Experience/>
         <Achievements />
         <Resume />
         <Contact />
       </main>
-      
-      {/* Footer */}
-      <footer className="bg-card border-t border-border py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p className="text-muted-foreground">
-            © 2024 Creative Portfolio. Built with React, TypeScript, and Tailwind CSS.
-          </p>
-        </div>
-      </footer>
+
+     <footer className="bg-card border-t border-border py-8">
+  <div className="container mx-auto px-6 text-center space-y-3">
+    
+    {/* Availability Status */}
+    <div className="flex justify-center items-center space-x-2">
+      <span className="relative flex h-3 w-3">
+        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75"></span>
+        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600"></span>
+      </span>
+      <span className="text-sm text-foreground font-medium">
+        Currently open to internships or exciting ideas 🚀
+      </span>
+    </div>
+
+    
+  </div>
+</footer>
+
     </div>
   );
 };

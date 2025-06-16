@@ -1,4 +1,4 @@
-import { Trophy, Star, Users, Code } from 'lucide-react';
+import { Trophy, Terminal, Users } from 'lucide-react';
 
 const Achievements = () => {
   const achievements = [
@@ -9,27 +9,15 @@ const Achievements = () => {
       year: '2024',
       color: 'from-yellow-400 to-orange-500',
     },
-    {
-      icon: Star,
-      title: 'PwC Launchpad Program 2025',
-      description: 'Selected for the prestigious PwC Launchpad cohort, focusing on business and technology leadership.',
-      year: '2025',
-      color: 'from-blue-400 to-purple-500',
-    },
-    {
-      icon: Users,
-      title: 'Team Leadership – CodeSpeedy Intern',
-      description: 'Led a team of 5+ developers to build and deploy scalable backend systems and full-stack applications.',
-      year: '2023',
-      color: 'from-green-400 to-blue-500',
-    },
-    {
-      icon: Code,
-      title: 'Smart Project Builder',
-      description: 'Developed innovative AI and Web-based projects like Stroke Prediction, NIDS, and E-waste platforms.',
-      year: '2022–2024',
-      color: 'from-purple-400 to-pink-500',
-    },
+   {
+  icon: Users,
+  title: 'NASA Space Apps Hackathon 2023',
+  description: 'Secured Top 5 Finalist spot in the NASA Space Apps Challenge by developing innovative web apps tackling space  challenges.',
+  year: '2023',
+  color: 'from-purple-500 to-pink-500',
+},
+
+
   ];
 
   const stats = [
@@ -57,7 +45,7 @@ const Achievements = () => {
               className="text-center p-6 bg-card border border-border rounded-xl card-hover"
               data-cursor-hover
             >
-              <div className="text-3xl md:text-4xl font-bold text-gradient mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-gradient mb-2">
                 {stat.value}
               </div>
               <div className="text-muted-foreground text-sm font-medium">
@@ -82,7 +70,7 @@ const Achievements = () => {
                 
                 <div className="flex-1">
                   <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                    <h3 className="text-xl md:text-2xl font-semibold group-hover:text-primary transition-colors">
                       {achievement.title}
                     </h3>
                     <span className="text-sm text-muted-foreground bg-accent px-2 py-1 rounded">
@@ -90,7 +78,7 @@ const Achievements = () => {
                     </span>
                   </div>
                   
-                  <p className="text-muted-foreground">
+                  <p className=" text-base md:text-2xltext-muted-foreground">
                     {achievement.description}
                   </p>
                 </div>

@@ -77,7 +77,7 @@ const Contact = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gradient mb-6">Get In Touch</h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Ready to start your next project? Let's work together to create something amazing.
+            Liked my work?I'm available to collaborate on amazing projects
           </p>
         </div>
 
@@ -85,10 +85,9 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
-              <p className="text-muted-foreground mb-8">
-                I'm always interested in hearing about new opportunities and exciting projects. 
-                Whether you have a question or just want to say hi, feel free to reach out!
+              <h3 className="text-3xl font-semibold mb-6">Let's Connect</h3>
+              <p className=" text-base md:text-xl text-muted-foreground mb-8">
+               Inbox open — Got code, ideas, or memes? Let’s collide creatively.
               </p>
             </div>
 

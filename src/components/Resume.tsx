@@ -1,7 +1,7 @@
 import { Download, FileText } from 'lucide-react';
 
 const Resume = () => {
-  const resumeUrl = 'public\NagaArundhathi_WebDevlopment_Resume.pdf' ;// Replace with your actual file path
+  const resumeUrl = '/NagaArundhathi_WebDevlopment_Resume.pdf' ;// Replace with your actual file path
 
   const handleDownload = () => {
     const a = document.createElement('a');
