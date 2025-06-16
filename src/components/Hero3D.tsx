@@ -37,7 +37,6 @@ const Hero3D = () => {
   const [availableQuestions, setAvailableQuestions] = useState(questions);
   const chatContainerRef = useRef<HTMLDivElement>(null);
 
-  // This effect will now only rotate elements that still have the 'hero-3d-element' class
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -47,7 +46,7 @@ const Hero3D = () => {
       const y = (e.clientY - rect.top) / rect.height;
       const rotateX = (y - 0.5) * 10;
       const rotateY = (x - 0.5) * 10;
-      const elements = container.querySelectorAll('.hero-3d-element'); // This selector no longer finds the terminal box
+      const elements = container.querySelectorAll('.hero-3d-element');
       elements.forEach((el, index) => {
         const element = el as HTMLElement;
         const depth = (index + 1) * 0.5;
@@ -88,44 +87,47 @@ const Hero3D = () => {
   };
 
   return (
+    // --- UPDATED: Removed flex properties from the main container ---
     <div
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen overflow-hidden"
       style={{ perspective: '1000px' }}
     >
+      {/* Background and particles are fine here */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#2C2A4A] to-[#1F1E33]"></div>
       {[...Array(20)].map((_, i) => (
         <div key={i} className="absolute w-2 h-2 bg-pink-300/20 rounded-full animate-float" style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`, animationDelay: `${Math.random() * 6}s`, animationDuration: `${6 + Math.random() * 4}s` }} />
       ))}
       
-      <div className="relative z-10 text-center max-w-4xl mx-auto px-6 lg:text-left lg:max-w-none lg:pl-24">
-        <div className="hero-3d-element mb-8">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#FFD6C9] mb-4 animate-fade-in">
-            Naga Arundhathi Jampala
-            <span className="block text-3xl md:text-4xl font-medium text-gray-300 mt-2">
-              Full Stack Developer | AI Builder | DevOps Learner
-            </span>
-          </h1>
-        </div>
-        <div className="hero-3d-element mb-8" style={{ animationDelay: '0.2s' }}>
-          <p className="text-lg md:text-xl text-gray-400 animate-fade-in">
+      {/* --- UPDATED: A new container whose only job is to center the main text --- */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6 lg:text-left lg:max-w-none lg:pl-24">
+          <div className="hero-3d-element mb-8">
+            <h1 className="text-5xl md:text-7xl font-bold text-[#FFD6C9] mb-4 animate-fade-in">
+              Naga Arundhathi Jampala
+              <span className="block text-3xl md:text-4xl font-medium text-gray-300 mt-2">
+                Full Stack Developer | AI Builder | DevOps Learner
+              </span>
+            </h1>
+          </div>
+          <div className="hero-3d-element mb-8" style={{ animationDelay: '0.2s' }}>
+            <p className="text-lg md:text-xl text-gray-400 animate-fade-in">
               Just a curious mind building things with code, chasing ideas, and occasionally debugging life.
-
-          </p>
+            </p>
+          </div>
         </div>
       </div>
+      
+      {/* Your graphic image can now be positioned safely */}
+      <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-10">
+        <img
+          src="/6597434.jpg"
+          alt="Arundhathi Graphic"
+          className="w-[140px] md:w-[160px] lg:w-[280px] rounded-xl shadow-xl animate-fade-in"
+        />
+      </div>
 
-      {/* --- UPDATED: Removed 'hero-3d-element' class to stop rotation on this box --- */}
-  <div className="absolute top-1/2 left-6 transform -translate-y-1/2 z-10">
-  <img
-    src="/6597434.jpg"
-    alt="Arundhathi Graphic"
-    className="w-[140px] md:w-[160px] lg:w-[480px] rounded-xl shadow-xl animate-fade-in"
-  />
-</div>
-
-
-
+      {/* Floating shapes are also fine */}
       <div className="absolute top-1/4 left-1/4 w-32 h-32 hero-3d-element opacity-10 blur-sm">
         <div className="w-full h-full bg-gradient-to-br from-[#FFAC70] to-[#FFD6C9] rounded-3xl animate-float"></div>
       </div>
@@ -133,6 +135,7 @@ const Hero3D = () => {
         <div className="w-full h-full bg-gradient-to-br from-[#FFD6C9] to-[#FFAC70] rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
       </div>
 
+      {/* The fixed chatbot is also unaffected and safe */}
       <div className="fixed top-1/2 right-6 md:right-10 lg:right-24 transform -translate-y-1/2 z-50">
         <div className="w-80 h-[28rem] bg-black/30 backdrop-blur-lg rounded-xl shadow-2xl flex flex-col overflow-hidden animate-fade-in">
           <div className="flex-shrink-0 p-3 bg-black/20 text-center text-white font-medium">Know me</div>
